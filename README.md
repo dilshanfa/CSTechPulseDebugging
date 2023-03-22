@@ -38,7 +38,7 @@
   - [ ] Conditional Breakpoints
   - [ ] Debugging with Threads
 
-- [ ] If we have time
+### If we have time
   - [ ] Hotswap
   - [ ] Memory Analysing
   - [ ] Can we debug a running application?
