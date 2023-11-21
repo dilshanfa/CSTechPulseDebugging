@@ -3,16 +3,25 @@ package org.example;
 
 import org.junit.Test;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 import static org.junit.Assert.*;
 
+
+
+
+
+
 /**
- * <h1> [Sirius Kuppi] - Advance Debugging Session </h1>
- * <h2>Dilshan Fardil</h3>
- * <h4>2023/03/23</h4>
+ * <div style="font-size: 300%;"> [CS TechPulse] - Advanced Debugging With Intellij IDEA </div>
+ * <div style="font-size: 300%;"></div>
+ * <div style="font-size: 300%;"></div>
+ *
+ * <div style="font-size: 150%;">By Dilshan Fardil</div>
+ * <div style="font-size: 150%;">2023/11/18</div>
  */
 public class LetsDebug {
 
@@ -26,26 +35,8 @@ public class LetsDebug {
 
 
 
-
-
-
-
     /**
-     * <div style="font-size: 160%;"> So why we debug ?? </div>
-     * <ul>
-     * <li>Find and fix the bug or to create a nice internal issue</li>
-     * <li>Code Analysis</li>
-     * <ul>
-     *     <li>What parts of the codes are execute</li>
-     *     <li>Getting familiar with new code</li>
-     *     <li>Understand the flow</li>
-     * </ul>
-     * <li>Change the behaviour of the code</li>
-     * <ul>
-     *     <li>Reproduce a complicated setup</li>
-     *     <li>Change the methods variable and simply anything on the fly</li>
-     * </ul>
-     * </li>
+     * <img src="/Users/dilshanfardil/Downloads/debugging-tactics.jpeg" width="2500"><br>
      */
     int slide1;
 
@@ -57,11 +48,31 @@ public class LetsDebug {
 
 
 
-
-
     /**
-     * <div style="font-size: 160%;"> Let's Cover the basics first </div>
-     * @see org.example.thread.UsageAnalyzer
+     * <div style="font-size: 300%;"> So why we debug ?? </div>
+     * <div style="font-size: 300%;"></div>
+     * <ul>
+     * <li><div style="font-size: 180%;">Find and fix bug !!</div></li>
+     * <div style="font-size: 100%;"></div>
+     * <li><div style="font-size: 180%;">Code Analysis</div></li>
+     * <ul>
+     *     <li><div style="font-size: 150%;">What parts of the codes are execute</div></li>
+     *     <li><div style="font-size: 150%;">Getting familiar with new code</div></li>
+     *     <li><div style="font-size: 150%;">Understand the flow</div></li>
+     * </ul>
+     * <div style="font-size: 100%;"></div>
+     * <li><div style="font-size: 180%;">Change the behaviour of the code</div></li>
+     * <ul>
+     *     <li><div style="font-size: 150%;">Reproduce a complicated setup</div></li>
+     *     <li><div style="font-size: 150%;">Change the methods variable and simply anything on the fly</div></li>
+     * </ul>
+     * <div style="font-size: 100%;"></div>
+     * <li><div style="font-size: 180%;">Add more logging on the fly</div></li>
+     * <div style="font-size: 100%;"></div>
+     * <li><div style="font-size: 180%;">Analyze memory issues</div></li>
+     * <div style="font-size: 100%;"></div>
+     * <li><div style="font-size: 180%;">Set a breakpoint bomb !!</div></li>
+     * </li>
      */
     int slide2;
 
@@ -78,17 +89,10 @@ public class LetsDebug {
 
 
 
-
     /**
-     * <div style="font-size: 160%;"> Breakpoints Dialog </div>
-     *
-     * <ul>
-     *  <li>Group By</li>
-     *  <li>Custom Group</li>
-     *  <li>Enable and Disable all at once</li>
-     *  <li>Add descriptions</li>
-     * </ul>
-     * @see @api-mgt-module
+     * <div style="font-size: 300%;"> Debugger Essentials </div>
+     * <div style="font-size: 300%;"></div>
+     * <div style="font-size: 150%;">@see {org.example.thread.UsageAnalyzer}</div>
      */
     int slide3;
 
@@ -99,16 +103,59 @@ public class LetsDebug {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     /**
-     * <div style="font-size: 160%;"> Breakpoint Settings </div>
+     * <div style="font-size: 300%;"> Breakpoints Dialog </div>
+     * <div style="font-size: 100%;"></div>
+     * <ul>
+     *  <li><div style="font-size: 120%;">Group By</div></li>
+     *  <li><div style="font-size: 120%;">Custom Group</div></li>
+     *  <li><div style="font-size: 120%;">Enable and Disable all at once</div></li>
+     *  <li><div style="font-size: 120%;">Add descriptions</div></li>
+     * </ul>
+     * <div style="font-size: 180%;">@see wso2-synapse</div>
+     *
+     */
+    int slide4;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * <div style="font-size: 300%;"> Breakpoint Settings </div>
      *
      * <ul>
-     *  <li>No Suspend ?</li>
-     *  <li>Evaluate Log</li>
-     *  <li>Breakpoint hit</li>
-     *  <li>Stacktrace Dump</li>
-     *  <li>Shift + Click</li>
-     *  <li>Change the value (as an eg - instance to null)</li>
+     *  <li><div style="font-size: 120%;">No Suspend ?</div></li>
+     *  <li><div style="font-size: 120%;">Evaluate Log</div></li>
+     *  <li><div style="font-size: 120%;">Breakpoint hit</div></li>
+     *  <li><div style="font-size: 120%;">Stacktrace Dump</div></li>
+     *  <li><div style="font-size: 120%;">Shift + Click</div></li>
+     *  <li><div style="font-size: 120%;">Change the value (as an eg - instance to null)</div></li>
      * </ul>
      */
     public static class Cache
@@ -135,11 +182,21 @@ public class LetsDebug {
 
 
 
+
+
+
+
+
+
+
+
+
+
     /**
-     * <div style="font-size: 160%;"> Breakpoint Settings </div>
+     * <div style="font-size: 300%;"> Breakpoint Settings </div>
      *
      * <ul>
-     *  <li>Dependent Breakpoint</li>
+     *  <li><div style="font-size: 120%;">Dependent Breakpoint</div></li>
      * </ul>
      */
     public static class Workout
@@ -175,11 +232,19 @@ public class LetsDebug {
 
 
 
+
+
+
+
+
+
+
+
     /**
-     * <div style="font-size: 160%;"> Breakpoint Settings </div>
+     * <div style="font-size: 300%;"> Breakpoint Settings </div>
      *
      * <ul>
-     *  <li>Suspended Thread Vs All</li>
+     *  <li><div style="font-size: 120%;">Suspended Thread Vs All</div></li>
      * </ul>
      */
     public static class ConcurrencyTest
@@ -213,13 +278,17 @@ public class LetsDebug {
 
 
 
+
+
+
+
     /**
-     * <div style="font-size: 160%;"> Breakpoint Types </div>
+     * <div style="font-size: 300%;"> Breakpoint Types </div>
      * <ul>
-     * <li>Method BR</li>
-     * <li>Interfaces</li>
-     * <li>Class BR Wild Cards</li>
-     * <li>Exception BR</li>
+     * <li><div style="font-size: 120%;">Method BR</div></li>
+     * <li><div style="font-size: 120%;">Interfaces</div></li>
+     * <li><div style="font-size: 120%;">Class BR Wild Cards</div></li>
+     * <li><div style="font-size: 120%;">Exception BR</div></li>
      * </ul>
      *
      */
@@ -230,11 +299,21 @@ public class LetsDebug {
 
 
 
+
+
+
+
+
+
+
+
+
+
     /**
-     * <div style="font-size: 160%;"> Advanced Stepping </div>
+     * <div style="font-size: 300%;"> Advanced Stepping </div>
      * <ul>
-     * <li>Drop Frame</li>
-     * <li>Force Return</li>
+     * <li><div style="font-size: 120%;">Drop Frame</div></li>
+     * <li><div style="font-size: 120%;">Force Return</div></li>
      * </ul>
      *
      */
@@ -267,9 +346,77 @@ public class LetsDebug {
     }
 
 
+
+
+
     /**
-     * <h1> Thank You </h1>
-     * <h3>Now you can debug much better !!!</h3>
+     * <div style="font-size: 300%;"> Renderers </div>
+     * <ul>
+     * <li><div style="font-size: 120%;">Mute</div></li>
+     * <li><div style="font-size: 120%;">Settings</div></li>
+     * <li><div style="font-size: 120%;">Switch</div></li>
+     * </ul>
+     *
+     * <div style="font-size: 120%;">see UsageAnalyser</div>
+     */
+    int slide10;
+
+
+
+
+
+
+
+
+    /**
+     * <div style="font-size: 300%;"> Remote Debug </div>
+     * <ul>
+     * <li><div style="font-size: 120%;">Remote configuration</div></li>
+     * <li><div style="font-size: 120%;">Force Return</div></li>
+     * </ul>
+     *
+     */
+    public static class Endless
+    {
+        public static void main(String[] args) throws IOException {
+            while(true)
+            {
+                int read = System.in.read();
+                System.out.println(read);
+
+                if(filter(read)){
+                    process(read);
+                }
+
+            }
+        }
+
+        private static void process(int read) {
+            if(Math.max(read,100) %2 ==0)
+            {
+                System.out.println("1");
+            }
+        }
+
+        private static boolean filter(int read) {
+            return read != '\n' && read != 'a';
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+    /**
+     * <div style="font-size: 300%;"> Thank You </div>
+     * <div style="font-size: 120%;"></div>
+     * <div style="font-size: 120%;">Now you can debug much better !!!</div>
      */
     int anyQuestions;
 

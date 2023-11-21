@@ -3,7 +3,11 @@ package org.example.thread;
 import java.io.*;
 import java.util.*;
 
+
+
+
 /**
+ *
  * This class analyzes the thread usage and prints the top N threads with highest CPU usage.
  *
  * @author Dilshan.Fardil
@@ -11,9 +15,17 @@ import java.util.*;
  */
 public class UsageAnalyzer
 {
+
+
     /**
-     * <h1>Let's cover the basics</h1>
+     *  <div style="font-size: 300%;"> Renderers </div>
+     *  <ul>
+     *  <li><div style="font-size: 120%;">Mute</div></li>
+     *  <li><div style="font-size: 120%;">Settings</div></li>
+     *  <li><div style="font-size: 120%;">Switch</div></li>
+     *  </ul>
      */
+
     private static final String FILE_NAME = "./src/main/resources/thread_usage.txt";
     private static Map<String, ThreadUsage> threadUsageMap = new HashMap<>();
 
@@ -23,6 +35,7 @@ public class UsageAnalyzer
         List<String> threadUsageLines = readAsList(FILE_NAME);
         toMap(threadUsageLines);
 
+        System.out.print("Top ");
         Scanner scan = new Scanner(System.in);
         while (scan.hasNext()) {
             int count = scan.nextInt();
