@@ -1,13 +1,17 @@
 ### Debugging
 
 ### Why we need debugging
-- Find and fix the bug or to create a nice internal issue
-- Code analysing
-  - Getting familiar with new code base
+- Find and fix bug !!
+- Code Analysis
+  - What parts of the codes are execute
+  - Getting familiar with new code
   - Understand the flow
 - Change the behaviour of the code
   - Reproduce a complicated setup
   - Change the methods variable and simply anything on the fly
+- Add more logging on the fly
+- Analyze memory issues
+- Set a breakpoint bomb !!
 
 
 ### Debugging Basics in IntelliJ - UsageAnalyzer.java

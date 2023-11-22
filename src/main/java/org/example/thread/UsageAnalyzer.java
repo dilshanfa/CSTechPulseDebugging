@@ -16,16 +16,6 @@ import java.util.*;
 public class UsageAnalyzer
 {
 
-
-    /**
-     *  <div style="font-size: 300%;"> Renderers </div>
-     *  <ul>
-     *  <li><div style="font-size: 120%;">Mute</div></li>
-     *  <li><div style="font-size: 120%;">Settings</div></li>
-     *  <li><div style="font-size: 120%;">Switch</div></li>
-     *  </ul>
-     */
-
     private static final String FILE_NAME = "./src/main/resources/thread_usage.txt";
     private static Map<String, ThreadUsage> threadUsageMap = new HashMap<>();
 

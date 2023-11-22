@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 import static org.junit.Assert.*;
 
@@ -21,7 +22,7 @@ import static org.junit.Assert.*;
  * <div style="font-size: 300%;"></div>
  *
  * <div style="font-size: 150%;">By Dilshan Fardil</div>
- * <div style="font-size: 150%;">2023/11/18</div>
+ * <div style="font-size: 150%;">2023/11/24</div>
  */
 public class LetsDebug {
 
@@ -287,20 +288,86 @@ public class LetsDebug {
      * <ul>
      * <li><div style="font-size: 120%;">Method BR</div></li>
      * <li><div style="font-size: 120%;">Interfaces</div></li>
-     * <li><div style="font-size: 120%;">Class BR Wild Cards</div></li>
-     * <li><div style="font-size: 120%;">Exception BR</div></li>
+     * <li><div style="font-size: 120%;">Wild Card Method</div></li>
      * </ul>
      *
      */
-    public static void main(String[] args)
+   public static class MethodBreakPoint
     {
-        System.out.println("See Verify HostName Scenario");
+        public static void main(String[] args)
+        {
+            MethodBreakPoint.BaseInterface baseInterface = SomeWhere.getObject();
+            System.out.println(baseInterface.read());
+            System.out.println(baseInterface.write());
+        }
+
+        public interface BaseInterface{
+            String read();
+            String write();
+        }
     }
 
 
 
 
 
+
+
+    /**
+     * <div style="font-size: 300%;"> Breakpoint Types </div>
+     * <ul>
+     * <li><div style="font-size: 120%;">Field BP</div></li>
+     * </ul>
+     */
+    public static class FieldBreakPoint
+    {
+        int var = new Random().nextInt(100);
+
+        public static void main(String[] args)
+        {
+            FieldBreakPoint field = new FieldBreakPoint();
+            SomeWhere.doSomething(field);
+            if(field.var > 3)
+            {
+                System.out.println("Grater Than 3....!");
+            }
+            else
+            {
+                System.out.println("Less Than 3....!");
+            }
+        }
+
+        void foobar()
+        {
+            var = 1;
+        }
+
+        void foo()
+        {
+            var = 2;
+        }
+
+        void bar()
+        {
+            var = 3;
+        }
+
+        void qux()
+        {
+            var = 4;
+        }
+
+        void waldo()
+        {
+            var = 5;
+        }
+
+        void fred()
+        {
+            var = 6;
+        }
+
+    }
 
 
 
@@ -349,17 +416,44 @@ public class LetsDebug {
 
 
 
+
+
+
+
     /**
      * <div style="font-size: 300%;"> Renderers </div>
      * <ul>
      * <li><div style="font-size: 120%;">Mute</div></li>
      * <li><div style="font-size: 120%;">Settings</div></li>
      * <li><div style="font-size: 120%;">Switch</div></li>
+     * <li><div style="font-size: 120%;">Debugging Stream</div></li>
      * </ul>
      *
      * <div style="font-size: 120%;">see UsageAnalyser</div>
      */
     int slide10;
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * <div style="font-size: 300%;"> Analysing Tools </div>
+     */
+    int slide11;
+
+
+
+
+
 
 
 
@@ -420,4 +514,60 @@ public class LetsDebug {
      */
     int anyQuestions;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public static class SomeWhere implements MethodBreakPoint.BaseInterface
+    {
+        public static MethodBreakPoint.BaseInterface getObject() {
+            return new SomeWhere();
+        }
+
+        public static void doSomething(FieldBreakPoint field)
+        {
+            switch (field.var%6){
+                case 1:
+                    field.foobar();
+                    break;
+                case 2:
+                    field.foo();
+                    break;
+                case 3:
+                    field.bar();
+                    break;
+                case 4:
+                    field.qux();
+                    break;
+                case 5:
+                    field.fred();
+                    break;
+                default:
+                    field.waldo();
+                    break;
+            }
+        }
+
+        @Override
+        public String read()
+        {
+            return "Reading......!";
+        }
+        @Override
+        public String write()
+        {
+            return "Writing......!";
+        }
+    }
 }
