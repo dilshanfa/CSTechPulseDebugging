@@ -25,13 +25,14 @@ public class UsageAnalyzer
         List<String> threadUsageLines = readAsList(FILE_NAME);
         toMap(threadUsageLines);
 
-        System.out.print("Top ");
+        System.out.print("Top Usages : ");
         Scanner scan = new Scanner(System.in);
         while (scan.hasNext()) {
             int count = scan.nextInt();
             threadUsageMap
                     .entrySet()
                     .stream()
+                    .distinct()
                     .sorted(Comparator.comparingDouble(e -> e.getValue().getColumnCPU()))
                     .skip(threadUsageLines.size() - count)
                     .forEach((e) -> System.out.println("Thread ID - " + "0x" + Integer.toHexString(e.getValue().getColumnTID()) + " CPU Usage - " + e.getValue().getColumnCPU()));

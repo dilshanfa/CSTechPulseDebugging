@@ -34,21 +34,6 @@ public class LetsDebug {
 
 
 
-
-
-    /**
-     * <img src="/Users/dilshanfardil/Downloads/debugging-tactics.jpeg" width="2500"><br>
-     */
-    int slide1;
-
-
-
-
-
-
-
-
-
     /**
      * <div style="font-size: 300%;"> So why we debug ?? </div>
      * <div style="font-size: 300%;"></div>
@@ -75,7 +60,7 @@ public class LetsDebug {
      * <li><div style="font-size: 180%;">Set a breakpoint bomb !!</div></li>
      * </li>
      */
-    int slide2;
+    int slide1;
 
 
 
@@ -95,7 +80,7 @@ public class LetsDebug {
      * <div style="font-size: 300%;"></div>
      * <div style="font-size: 150%;">@see {org.example.thread.UsageAnalyzer}</div>
      */
-    int slide3;
+    int slide2;
 
 
 
@@ -132,7 +117,7 @@ public class LetsDebug {
      * <div style="font-size: 180%;">@see wso2-synapse</div>
      *
      */
-    int slide4;
+    int slide3;
 
 
 
@@ -156,6 +141,7 @@ public class LetsDebug {
      *  <li><div style="font-size: 120%;">Breakpoint hit</div></li>
      *  <li><div style="font-size: 120%;">Stacktrace Dump</div></li>
      *  <li><div style="font-size: 120%;">Shift + Click</div></li>
+     *  <li><div style="font-size: 120%;">Watch</div></li>
      *  <li><div style="font-size: 120%;">Change the value (as an eg - instance to null)</div></li>
      * </ul>
      */
@@ -212,19 +198,20 @@ public class LetsDebug {
 
         private static void warmUp(){
             for (int i = 0; i < 10; i++) {
-                count();
+                count(i);
             }
         }
 
         private static void workout(){
             for (int i = 0; i < 10; i++) {
-                count();
+                count(i);
             }
         }
 
-        private static void count()
+        private static void count(int i)
         {
-            int count = 10;
+            int count = i + 1;
+            System.out.println(count);
         }
 
     }
@@ -270,9 +257,26 @@ public class LetsDebug {
                 if (!list.contains(x)) {
                     list.add(x);
                 }
-
         }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * <div style="font-size: 300%;"> Analysing Tools </div>
+     */
+    int slide7;
 
 
 
@@ -374,6 +378,36 @@ public class LetsDebug {
 
 
 
+    /**
+     * <div style="font-size: 300%;"> Breakpoint Types </div>
+     * <ul>
+     * <li><div style="font-size: 120%;">Exception BP</div></li>
+     * </ul>
+     */
+    public static class ExceptionBreakPoint
+    {
+        public static void main(String[] args)
+        {
+            for (int i = 0; i < 20; i++)
+            {
+                try {
+                    SomeWhere.doSomethingException();
+                }
+                catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+            int a = 1/0;
+
+        }
+
+    }
+
+
+
+
+
+
 
 
     /**
@@ -388,8 +422,12 @@ public class LetsDebug {
     {
         public static void main(String[] args) {
 
-            for (int i = 0; i < 10; i++) {
-                System.out.println(multiply(add(10)));
+            for (int i = 0; i < 10; i++)
+            {
+                if(isEven(i))
+                {
+                    System.out.println(multiply(add(10)));
+                }
             }
 
         }
@@ -408,6 +446,12 @@ public class LetsDebug {
                 number+=i;
             }
             return number;
+        }
+
+        private static boolean isEven(int i)
+        {
+            System.out.println("Is it event ?");
+            return i%2==0;
         }
 
     }
@@ -431,23 +475,6 @@ public class LetsDebug {
      *
      * <div style="font-size: 120%;">see UsageAnalyser</div>
      */
-    int slide10;
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /**
-     * <div style="font-size: 300%;"> Analysing Tools </div>
-     */
     int slide11;
 
 
@@ -460,43 +487,6 @@ public class LetsDebug {
 
 
 
-
-
-    /**
-     * <div style="font-size: 300%;"> Remote Debug </div>
-     * <ul>
-     * <li><div style="font-size: 120%;">Remote configuration</div></li>
-     * <li><div style="font-size: 120%;">Force Return</div></li>
-     * </ul>
-     *
-     */
-    public static class Endless
-    {
-        public static void main(String[] args) throws IOException {
-            while(true)
-            {
-                int read = System.in.read();
-                System.out.println(read);
-
-                if(filter(read)){
-                    process(read);
-                }
-
-            }
-        }
-
-        private static void process(int read) {
-            if(Math.max(read,100) %2 ==0)
-            {
-                System.out.println("1");
-            }
-        }
-
-        private static boolean filter(int read) {
-            return read != '\n' && read != 'a';
-        }
-
-    }
 
 
 
@@ -559,14 +549,46 @@ public class LetsDebug {
             }
         }
 
+
+
+        public static int doSomethingException()
+        {
+
+            Object a = null;
+            Object b = new Object();
+
+            int x = 1;
+            int y = 0;
+            int z = Integer.MAX_VALUE;
+
+            switch (new Random().nextInt(5)){
+                case 0:
+                    return Math.floorDiv(x,y);
+                case 1:
+                    return a.hashCode();
+                case 2:
+                    return Math.incrementExact(z);
+                case 3:
+                    return Integer.parseInt("xxx");
+                case 4:
+                    return ((String)b).length();
+            }
+            return 0;
+
+        }
+
+
+
         @Override
         public String read()
         {
+            System.out.println("Start Read....");
             return "Reading......!";
         }
         @Override
         public String write()
         {
+            System.out.println("Start Write....");
             return "Writing......!";
         }
     }
